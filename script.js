@@ -222,10 +222,14 @@ function startBalloonFloat() {
   const balloons = document.querySelectorAll('#imageFloatContainer'); // animate container
 
   balloons.forEach((balloon, i) => {
+  const bw = balloon.offsetWidth;   // balloon width
+  const maxX = window.innerWidth - bw; // keep inside screen
+  const minX = 10;                  // optional margin from left
+
+    // Set initial position (below screen + random X)
     gsap.set(balloon, {
-      y: window.innerHeight + 100, // start below screen
-      x: gsap.utils.random(50, window.innerWidth - 50), // random start X
-      scale: gsap.utils.random(0.9, 1.1)
+      y: window.innerHeight, // start below bottom
+      x: gsap.utils.random(minX, maxX)
     });
 
     // Float upward
