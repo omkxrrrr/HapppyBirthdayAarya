@@ -229,7 +229,7 @@ function startBalloonFloat() {
     // Set initial position (below screen + random X)
     gsap.set(balloon, {
       y: window.innerHeight, // start below bottom
-      x: gsap.utils.random(50, window.innerWidth - ballooxcn.offsetWidth - 50)
+      x: gsap.utils.random(minX, maxX)
     });
 
     // Float upward
